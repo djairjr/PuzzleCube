@@ -1,0 +1,20 @@
+Slicers for 3D printers typically take a 3d model into thin slicers (0.2mm is common). But what if you want to reassemble a 3D model from much thicker contour stacks - say 5mm plywood?
+
+Many slicers complain about such large slice thicknesses, and don't always allow you export in a convenient way anyway. There are some add-on 
+https://www.ponoko.com/blog/ponoko/slice-your-3d-model-for-lasercutting/
+
+Howeever, you can do it just using OpenSCAD, as follows:
+
+// THe projection() function creates the shape formed by the intersection of the 3D model and the x plane. To create a series of slices, we use translate to move the model gradully down, so the cut point "rises"
+
+for (i=[0:12])  {
+    
+    translate([0,i*40,0])
+    
+projection(cut=true) 
+translate([0,0,i*3]) 
+rotate([0,90,0]) 
+import("C:/Users/alast/Desktop/motor_mount.stl");
+}
+
+Then, file Export as SVG. Load in Inkscape and rearrange.
