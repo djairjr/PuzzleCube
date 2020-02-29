@@ -1,3 +1,18 @@
+Inkscape has a built-in gears module for rendering gears, which can be found under the *Extensions -> Render -> Gear* menu item. 
+However, the functionality of this module is relatively limited - there are no options to create racks, inner gears, or to customise the number of spokes, for example.
+So, instead, we'll install an alternative gears module, which you can download from https://github.com/jnweiger/inkscape-gears-dev
+
+To install this extension:
+ - Download the latest .zip file from https://github.com/jnweiger/inkscape-gears-dev/archive/master.zip
+ - Extract this archive and copy the *gears-dev.py* and *gears-dev.inx* files to your inkscape extensions directory (On Windows, this is %APPDATA%/inkscape/extensions)
+ - Restart Inkscape
+ 
+ You should now have a new menu option under *Extensions -> Render -> Gear-dev*
+
+
+
+
+
 12, 30, 20, 12mm
 
 
