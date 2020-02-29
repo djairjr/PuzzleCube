@@ -1,0 +1,17 @@
+12, 30, 20, 12mm
+
+
+
+Alphabet wheel
+First render a cog
+26, 20, 20, 12 mm
+
+Then render a grid -> polar grid
+Snap it to the centre of the gear
+
+To make the grid lines line up with the notches rather than the holes, need to rotate the cog by half a tooth width, so
+Then from the transform ->< rotate menu option,
+rotate by 360/26/2
+
+If SVG goes off when transferring to LaerGRBL, then ungroup and regroup all ovbjects to remove transforms from SVG:
+https://stackoverflow.com/questions/13329125/removing-transforms-in-svg-files
