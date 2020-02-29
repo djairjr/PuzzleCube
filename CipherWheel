@@ -9,24 +9,48 @@ To install this extension:
  
  You should now have a new menu option under *Extensions -> Render -> Gear-dev*
 
+Change settings as follows:
+
+Gears
+---
+Number of teeth: 26
+Tooth size: 5
+Tooth system: Module (mm)
+Pressure Angle: 20
+Draw center cross: Y
+Draw pitch circle: Y
+Draw annotation text: Y (can always be moved to anotehr layer later)
+
+Advanced options
+---
+Units: mm
+Number of Spokes: 2/3/4
+Mount hole diameter: 5 (or 6, whatever dowel size you're using)
+
+Click Apply and you'll get the gear created on the page. Depending on whether you chose to have the annotation text as well, you might have a bunch of other objects as well. Start by ungrouping them.
+
+Placing labels on the cog teeth
+---
+Select the meshing circle and take note of its W and H values at the top of the screen (in px)
+Now, create a circle that matches the H and W. This is a bit obtuse, but the cog is a path, and we want a circle.
+Now, create 26 text objects - you can type each letter of the alphabet on them if you want, or just spam copy paste a load for now.
+Then, select all 26 text letters and the circle. Then go to Object -> Arrange -> Polar coordinates.
+Select object's rotational center as the anchor point, and check "rotate objects". Then click Arrange.
+Brilliant! Now we have our text lined up with the edges of the cog.
+
+We might want to adjust the size, font of the text etc. to make it fit. To do so, use the text select tool and select and one character. Then Edit -> Select Same -> Object Type. You can now adjust font properties of all text objects together.
 
 
-
-
-12, 30, 20, 12mm
-
-
-
-Alphabet wheel
-First render a cog
-26, 20, 20, 12 mm
-
-Then render a grid -> polar grid
-Snap it to the centre of the gear
-
+Alternative method of placing labels
+---
+Create a guide to help us position our letters/symbols on the tip of each cog.
+Extensions -> Render -> Grids -> Polar Grid
+Set angle divisions to 1
+angle divisions at centre to 26
+Major circular dvision spacing (px) to half whatever the H or W value was of the meshing circle
 To make the grid lines line up with the notches rather than the holes, need to rotate the cog by half a tooth width, so
-Then from the transform ->< rotate menu option,
-rotate by 360/26/2
+Then from the transform ->< rotate menu option, rotate by 360/26/2
+Now need to manually position items at each node intersection of the polar grid.
 
 If SVG goes off when transferring to LaerGRBL, then ungroup and regroup all ovbjects to remove transforms from SVG:
 https://stackoverflow.com/questions/13329125/removing-transforms-in-svg-files
